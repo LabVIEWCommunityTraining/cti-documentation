@@ -160,13 +160,24 @@ Connect the Pico
 
 
 == Hardware
+USA and UK Suppliers
 
-Raspberry Pi Pico or Pico W.
-USA and UK Suppliers - We're probably going to standardise on Pico-W
-https://www.pishop.us/product/pico-breadboard-kit/
-https://thepihut.com/products/analog-test-board
-https://www.waveshare.com/analog-test-board.htm
-https://thepihut.com/products/breadboard-kit-for-raspberry-pi-pico
+Raspberry Pi Pico:
+
+* https://thepihut.com/products/breadboard-kit-for-raspberry-pi-pico[Pi Hut]
+* https://www.digikey.com/en/products/detail/raspberry-pi/SC0917/16608257[Digikey]
+
+
+Pico Breadboard Kit:
+
+* https://www.pishop.us/product/pico-breadboard-kit[Pi Shop]
+* https://www.digikey.com/en/products/detail/sb-components-ltd/SKU20843/16836965[Digikey]
+
+
+Analog Test Board:
+
+* https://thepihut.com/products/analog-test-board[Pi Hut]
+* https://www.waveshare.com/analog-test-board.htm[Waveshare]
 
 
 == Support Software
