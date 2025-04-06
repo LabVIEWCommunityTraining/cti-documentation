@@ -1,0 +1,171 @@
+= Lesson 4 – Event Structures
+:page-toclevels: 2
+
+CAUTION: {wip}
+
+== Optional: Setting up the Hardware 
+
+.Setting up the Pico Hardware
+[%collapsible]
+====
+Wire your Pico Hardware to match the images below
+
+image::pw_001.00_DigitalOutputsWiring.jpg[]
+
+image::pw_002.00_DigitalOutputsWiring.jpg[]
+
+====
+
+.Setting up the Raxda Hardware
+[%collapsible]
+====
+Wire your Radxa Hardware to match the images below
+
+image::rw_001.00_Power.png[]
+
+image::rw_002.00_DigitalOutputsWiring.png[]
+
+image::rw_003.00_DigitalOutputsWiring.png[]
+
+====
+
+
+== Lesson Instructions
+
+An Event Structure waits until a certain event occurs, then executes the
+appropriate case to handle that event. In this example, we want to press
+a buttons and the corresponding light to turn on.
+
+* First lets delete the while loop and its contents. Click on the While
+Loop and press the delete key. Do the same for the `True` constant. Then
+remove the broken wires with kbd:[Ctrl+B].
+
+image::cm_049.00_SelectWhileLoopToBeDeleted.png[]
+image::cm_050.00_InitializeWiredToConstantIO.png[]
+image::cm_051.00_Close-ErrorOutput-Wired2.png[]
+
+* Right-click to bring up the Functions Palette, hover over `Structures`
+then select `Event Structure.` Place the Event Structure on the Block
+Diagram.
+
+image::cm_052.00_RightClick-FunctionsPalette-Structures-EventStructure.png[]
+
+* Wire the Initialize VI and the Close VI through the Event Structure.
+
+image::cm_053.00_EventStructureWiredPassThroughInitializeAndClose.png[]
+
+* Add a new Event Case by Right-clicking on the Selector Label, and select
+`Add Event Case.`
+
+image::cm_054.00_RightClick-AddEventCase.png[]
+
+* Add the WriteDO.vi by bringing up the Functions Palette, hover over
+`Instrument I/O`, `Instr Drivers,` `HandsOnPi2040,` and select
+`WriteDO.vi.
+
+image::cm_055.00_RightClick-FunctionsPalette-InstrumentIO-InstrDrivers-HandsOnPi2040-WriteDO.png[]
+
+* Drag the sub VI inside the Event Structure and wire it up. Right-click
+the Output terminal and create a Constant.
+
+image::cm_056.00_DragWriteDOInsideEvent-RightClick-CreateConstant.png[]
+
+* Change the Output from `No DO – Error` to `DO1` by clicking the drop down arrow
+on the Output Constant.
+
+image::cm_057.00_EventStructureWired-ConstantDropDown-DO1(GPIO2).png[]
+
+* Next we need to add a button for the Digital Output. Go to the Front
+Panel, and Right-click anywhere to bring up the Controls Palette. Hover
+over `Boolean,` and select `Push Button`
+
+image::cm_058.00_RightClick-ControlsPalette-Boolean-PushButton2.png[]
+
+* Wire the new Boolean Control into the `DO Value` terminal.
+
+image::cm_059.00_EventStructureWired-BooleanControlTerminalWiredToWriteDO.png[]
+
+* Right-click on the Label Selector as we need to `Edit Events Handled
+by This Case.`
+
+image::cm_060.00_RightClick-EditEventsHandledByThisCase.png[]
+
+* This will bring up the `Edit Events` window. Select `Boolean.`
+
+image::cm_061.00_EventStructure-EditEventsWindow-Select-Boolean.png[]
+
+* This Event Case is now complete. We will need 3 more Event Cases, each
+one corresponding to a LED. The easiest way to do this is to Right-click
+the Label Selector, and select `Duplicate Event Case.`
+
+image::cm_062.00_RightClick-DuplicateEventCase.png[]
+
+* Select `Boolean 2` on the Edit Events window.
+
+image::cm_063.00_EventStructure-EditEventsWindow-Select-Boolean2.png[]
+
+* It's important to change the DO Constant when the case has been
+duplicated. (DO1 for Boolean, DO2 for Boolean 2, etc.) Duplicate this
+case 2 more times for DO3, and DO4.
+
+image::cm_064.00_EventStructureWired-ConstantDropDown-DO2(GPIO3).png[]
+
+* At this point your Front Panel may look a little messy, take some time to
+clean it up. This will make it easier to use when you have finished
+building the program.
+
+image::cm_065.00_MessyFrontPanelWith4BooleansAndErrorOut.png[]
+image::cm_066.00_OrganizedFrontPanelWith4BooleansAndErrorOut.png[]
+
+
+NOTE: You will be able to Run the program now, however, it will Stop after one Boolean has been selected. We can make this more efficient.
+
+* Back on the Block Diagram we will need to add a While Loop. Right
+click to bring up the Functions Palette, hover over `Structures` and
+select `While Loop.`
+
+image::cm_067.00_RightClick-FunctionsPalette-Structures-WhileLoop.png[]
+
+* Place the While Loop around the Event Structure.
+
+image::cm_068.00_WhileLoopAroundEventStructure.png[]
+
+* Go to the Front Panel, so we can add a `Stop` button that we`ll
+connect to the Loop Condition. Right-click to bring up the Controls
+Palette, hover over `Boolean, then select `Stop Button.`
+
+image::cm_069.00_RightClick-ControlsPalette-Boolean-StopButton.png[]
+
+* We will also need to create a new Event Case for this Stop button. Right
+click on the Selector Label and select `Add Event Case.`
+
+image::cm_070.00_RightClick-AddEventCase-ForStopButton.png[]
+
+* Place the `Stop` control inside the new case.
+
+image::cm_071.00_EventStructureWired-StopButtonInsideEventCase.png[]
+
+* Right-click the Selector Label and select `Edit Events Handled by This Case`
+
+image::cm_072.00_RightClick-EditEventsHandledByThisCase-StopButton.png[]
+
+* When the `Edit Events` window pops up choose the `stop` option in the
+`Event Sources` table.
+
+image::cm_073.00_EventStructure-EditEventsWindow-Select-Stop.png[]
+
+* Our last step is to wire a `True` constant to the Loop condition. Right
+click to bring up the Functions Palette, hover over `Boolean` and select
+`True Constant.`
+* Place the Constant inside the Event Structure.
+
+image::cm_074.00_RightClick-FunctionsPalette-Boolean-TrueConstant.png[]
+
+* Wire the constant to the Loop Condition, like the image below.
+
+image::cm_075.00_EventStructureWired-TrueConstant-ToStopTerminal.png[]
+
+* The program will now run successfully. You will be able to turn the LEDs on
+and off as many times as you want. You can use the Stop button to stop
+the execution of the program.
+

@@ -1,0 +1,23 @@
+= Set-up instructions
+
+See xref::ROOT:set-up.adoc[Set-up Instructions] to get {lv} environment.
+
+* If you are using the Emulator, load it by navigating to
+/root/Desktop/GettingStartedLabVIEW1-English-main/3) LabVIEW Instrument
+Emulator/builds/HandsOn/CTIPicoVISAEmulator/
+
+* Right-click in the window and select Open Terminal Here
+
+image::cm_001.00_Loading-CTIPicoVISAEmulator.png[]
+
+* Type in./CTIPicoVISAEmulator.exe
+
+image::cm_002.00_TypeCTIPicoVISAEmulator.exe-inCMD.png[]
+
+* The emulator will ask you to select a subnet.
+
+image::cm_003.00_SelectThisSubnet.png[]
+image::cm_004.00_HandsOnEmulatorFirstView.png[]
+
+* It will then sit waiting for a connection. “Connecting” will be
+displayed in status bar.

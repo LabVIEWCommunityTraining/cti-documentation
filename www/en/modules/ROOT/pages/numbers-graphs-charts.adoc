@@ -1,0 +1,250 @@
+= Lesson 5 - Numbers, Graphs and Charts
+:page-toclevels: 2
+
+CAUTION: {wip}
+
+== Optional: Setting up the Hardware 
+
+.Setting up the Pico Hardware (Analog Input)
+[%collapsible]
+====
+Wire your Pico Hardware to match the images below
+
+image::pw_003.00_AnalogInputsWiring.jpg[]
+
+image::pw_004.00_AnalogInputsWiring.gif[]
+
+image::pw_005.00_AnalogInputsWiring.gif[]
+
+====
+
+.Setting up the Raxda Hardware (Analog Input)
+[%collapsible]
+====
+Wire your Radxa Hardware to match the images below
+
+image::rw_004.00_AnalogInputsWiring.png[]
+
+image::rw_005.00_AnalogInputsWiring.png[]
+
+====
+
+== Lesson Instructions
+
+=== Analog Input
+
+Now you have made working programs using Digital Inputs and Outputs,
+it`s time to have a look at the Analog Inputs and Outputs.
+
+For this lesson you will be focusing on the Analog Inputs.
+
+image::cm_076.00_HandsOnEmulator-HighlightingAnalogInputs.png[]
+image::cm_077.00_PiCo-AnalogInput.png[]
+
+* Like the lessons before, start with placing the Initialize.vi, and the
+Close.vi on a new Block Diagram.
+
+* Right-click to bring up the Functions Palette. Follow along with the
+image below and place the ReadAI.vi on the diagram.
+
+image::cm_078.00_RightClick-FunctionsPalette-InstrumentIO-InstrDrivers-HandsOnPi2040-Initialize.png[]
+
+* You want to create a constant by Right-clicking on Analog Input on the left
+of the ReadAIs.vi, and selecting Create Constant.
+
+image::cm_079.00_RightClick-Create-Constant_ReadAI.png[]
+
+* Create an Indicator for the Analog value on the right side of the vi.
+
+image::cm_080.00_RightClick-Create-Indicator_ReadAI.png[]
+image::cm_081.00_ReadAI_Wired.png[]
+
+* Wire your program like the image below.
+
+image::cm_082.00_Initialize-ReadAI-Close-Wired.png[]
+
+NOTE: The program will successfully run at this point, however, it will
+execute too fast to move the Analog Sticks for continuous data.
+
+* To fix this issue, you can add a While Loop. Bring up the Functions
+Palette, then `Structures`, and select `While Loop`. Place this around
+the ReadAIs.vi, but leave space for other functions.
+
+image::cm_083.00_RightClick-FunctionsPalette-Structures-WhileLoop2.png[]
+
+
+* A While Loop will not work without adding a Loop Condition. In most cases
+this will simply be a Stop Boolean. Right-click on the Loop Condition
+and `Create Control`.
+
+image::cm_083.00_RightClick-FunctionsPalette-Structures-WhileLoop2.png[]
+image::cm_084.00_FrontPanel-StopButton-ErrorOut.png[]
+
+NOTE: This will automatically add a Stop Boolean onto the Front Panel.
+
+* You can run the program now and when you turn the Analog Sticks the
+value will show.
+
+image::cm_085.00_TurnAnalogSticksValueShows.png[]
+
+NOTE: If you are using physical Pico Bread Board and Analog Board you will notice the `Value` Indicator will flicker between numbers, this is normal and is simply extra `noise` from the equipment.
+
+* However, it is also possible to replace this with a Chart which will
+show the data continuously.
+
+image::cm_086.00_RightClick-Replace-Modern-Graph-WaveformChart.png[]
+
+* Right-click on the Value Indicator, and hover over Replace. This will bring up
+the Control Palette. Select Graph and then a Waveform Chart.
+
+image::cm_087.00_FrontPanel-StopButton-ErrorOut-Chart.png[]
+
+=== Analog Output (Write)
+
+== Optional: Setting up the Hardware 
+
+.Setting up the Pico Hardware (Analog Output)
+[%collapsible]
+====
+Wire your Pico Hardware to match the images below
+
+image::pw_008.00_AnalogOutputsWiring.gif[]
+
+====
+
+.Setting up the Raxda Hardware (Analog Output)
+[%collapsible]
+====
+Wire your Radxa Hardware to match the images below
+
+image::rw_008.00_AnalogOutputsWiring.png[]
+
+image::rw_009.00_AnalogOutputsWiring.png[]
+
+====
+
+
+* Beginning with a Block Diagram with an Initialize.vi and a Close.vi. Right-click
+to bring up the Functions Palette. Follow along with the image below and
+add the WriteAO.vi onto the diagram.
+
+image::cm_088.00_RightClick-FunctionsPalette-InstrumentIO-InstrDrivers-HandsOnPi2040-WriteAO.png[]
+
+* Wire up the 3 VIs.
+* Right-click on the `Analog Output` terminal and Create a Constant. 
+
+image::cm_089.00_RightClick-Create-Constant_WriteAO.png[]
+
+* For this exercise the Analog Output will produce 2 different pieces of numerical data, therefore 2 constants will be grouped into a Cluster. So for now also create a Constant for PWM Settings
+
+image::cm_090.00_WriteAO-Wired.png[]
+
+* You will need to create a Bundle. Right-click on the Block Diagram to
+bring up the Functions palette, hover over `Cluster, Class, & Variant,
+then select `Bundle By Name.`
+
+image::cm_091.00_RightClick-FunctionsPalette-ClusterClassAndVariant-BundleByName.png[]
+
+* Delete the wire connected to the subVI, as it needs to be wired into
+the bundle you built before.
+
+image::cm_092.00_SelectWireFromClusterToWriteAO-ToBeDeleted.png[]
+
+* Wire the bundle and the like the image below.
+
+image::cm_093.00_Initialize-WriteAO-Close-withBundleDutyWired.png[]
+
+* Once wired up, you will notice that the bundle has the label `Duty`. Expand the Bundle
+down so the `Frequency` label is visible.
+
+image::cm_094.00_DragAndExpandBundleByName-Duty-Frequency.png[]
+
+* Right-click at the edge of the bundle and create Controls for `Duty`
+and `Frequency.`
+
+image::cm_095.00_RightClick-Create-Control-DutyFrequency.png[]
+
+* The front panel should look like the image below. However, this needs some
+adjusting.
+
+NOTE: Using `Numeric Control` may be a little fiddly when the program runs, so in this case you will swap these out for `Vertical Pointer Slides`.
+
+image::cm_096.00_RightClick-Replace-modern-Numeric-VerticalPointerSlide.png[]
+
+* Right-click on the `Duty` Control and hover over `Replace.` Select `Numeric`
+and then `Vertical Pointer Slide.` Do the same for the `Frequency`
+Control.
+
+* You will need to change the `Scale` of the `Frequency` slider. Right-click
+on the Slider, select `Scale`, `Mapping`, then `Logarithmic.`
+
+image::cm_097.00_RightClick-Scale-Mapping-Logarithmic.png[]
+
+NOTE: A logarithmic scale is useful when the data you are displaying is much less or much more than the rest of the data, or when the percentage differences between values are important.
+
+* The `Duty` slider can stay as a Linear scale.
+
+image::cm_098.00_DutyScaleStaysLinear.png[]
+image::cm_099.00_FrequencySlideScaleLogarithmic.png[]
+
+* Now you need to set the top and bottom points on the sliders. You will only
+need to change the highest point for `Duty`. Set it to `1`.
+
+* For `Frequency` the lowest point should be `10` and the highest
+`500,000.`
+
+NOTE: Now let's head back to the Block Diagram and finish building the program.
+
+* Bring up the Functions Palette by Right-clicking on the Block Diagram, hover
+over `Structures` and select a For Loop. Place the For Loop around the
+WriteAO.vi.
+
+image::cm_100.00_RightClick-FunctionsPalette-Structures-ForLoop2.png[]
+
+* A For Loop needs a `Loop Count.` Choose a number that will allow you
+to time to use the dials and see how it executes on the Waveform Chart.
+
+image::cm_101.00_ForLoopWired-500N.png[]
+
+* You will need to slow down the Program before running it. Bring up the
+Functions Palette, select `Timing` and place the `Wait (ms)` function
+inside the For Loop.
+
+image::cm_102.00_RightClick-FunctionsPalette-Timing-Wait(ms).png[]
+
+* Right-click the left hand terminal on the Wait function and create a Constant.
+Type in `100` this will slow the program down enough for you to see the
+results.
+
+image::cm_103.00_Wait(ms)Wiired100Constant.png[]
+
+* You can now run your program. Move the Vertical Pointer Slides up and down
+and you will be results will show on the Emulator.
+
+image::cm_104.00_MovingSliders-HandsOnEmulatorDisplaysMovement.png[]
+
+=== Analog Output (Read)
+
+If you want a more accurate representation for the `Duty` and
+`Frequency` sliders you can use the ReadAOs.vi.
+
+Place the ReadAOs.vi inside the For Loop by repeat the same process you
+learnt at the beginning of the Analog Output (Write) lesson.
+
+image::cm_105.00_RightClick-FunctionsPalette-InstrumentIO-InstrDrivers-HandsOnPi2040-ReadAO.png[]
+
+* Wire the subVI as show in the image below. Right-click on the `AnalogOutput`
+terminal and create a Constant, then create an Indicator for the
+`AnOutValues.`
+
+image::cm_106.00_Intialize-WriteAO-ReadAO-Close-WithForLoop-Wired.png[]
+
+* You can now run the program, and you will see the Values for `Duty` and
+`Frequency` on the Front Panel.
+
+image::cm_107.00_Duty-Frequency-Outputs-Updated-on-FrontPanel.png[]
+
+NOTE: If you are using the Simulator the values for both will appear on the Emulator.
+
+image::cm_108.00_HandsOnEmulator-Updating-PWMDuty-PWMFreq.png[]
+

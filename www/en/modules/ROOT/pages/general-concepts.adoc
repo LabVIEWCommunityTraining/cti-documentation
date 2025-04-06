@@ -1,0 +1,105 @@
+= General Concepts
+:page-toclevels: 1
+
+CAUTION: {wip}
+
+== VIs (Virtual Instruments)
+
+Programs in LabVIEW are called VIs (Virtual Instruments). In other
+programming languages a VI is similar to a function or a subroutine. A
+VI includes a Front Panel and a Block Diagram, the VIs Icon and its
+Connector Pane.
+
+Front Panel::
+The front panel window is the user interface for the VI. You create the
+window with controls and indicators, these are the interactive input and
+output terminals of the VI.
+
+Block Diagram:: The Block Diagram is where you will create the code for your program.
+The block diagram will implement graphical representations of functions
+to control the objects on the front panel. Objects on the front panel
+will appear as terminals on the block diagram.
+
+Icons, Connector Panes, and SubVIs:: The icon and connector pane allow you to use and view the VI in another
+VI. This is called a SubVI, to use a SubVI you must build a connector
+pane. Customising the Icon is recommended to help with reading and
+understanding the program.
+The Icon is displayed in the upper right corner of the VI, it is a
+graphical representation of the VI. The icon can be customised with text
+and images to help identify what the VI does.
+The connector pane is a set of terminals on the icon the corresponds
+to the controls and indicators of the VI.
+
+.The default VI icon
+image::cm_109.00_Icon.png[]
+
+.The default connector pane
+image::cm_110.00_ConnectorPane.png[]
+
+== Data Types
+
+Each variable in a program must have a data type. The data types
+determines what type of value the variable will hold.
+
+Numeric –
+
+* Integer (int) – whole numbers (e.g., -700, 0, 700)
+* Floating point (float) – numbers with fractions (decimals) (e.g.,
+700.0, 0.7)
+
+Boolean – represents 2 states (e.g., true, or false, 1 or 0)
+
+String – sequence of characters, digits, or symbols – always treated as
+text (e.g., hello)
+
+Enumerated type – predefined unique values (can be text or numerical)
+(e.g., rock (0) jazz (1)
+
+Character – a single letter, digit, punctuation mark, symbol, or blank
+space.
+
+Array – stores multiple elements in a specific order. Note: black means
+no datatype selected. Drop another datatype into the array to make an
+array of that datatype.
+
+image::cm_111.00_DataTypes.png[]
+
+NOTE: Right-click on a data type terminal and select `View as Icon` depending on your preference. The 2^nd^ row shows the terminals as icons.
+
+== While Loops
+
+While Loops allow portions of a program to execute repeatedly until a
+certain condition is met.
+
+
+image::cm_112.00_WhileLoop.png[]
+
+. Iteration Terminal – the iteration terminal provides the current loop iteration.
+. Conditional Terminal – Evaluates a Boolean input value at the end of each loop iteration, if the conditional terminal is met then the loop stops.
+
+
+== For Loops
+
+A For Loop executes a sub-diagram a certain number of times. This value
+is wired to the Count Terminal (N).
+
+image::cm_113.00_ForLoop.png[]
+
+. Iteration Loop – Indicates the number of completed iterations.
+. Count Terminal – Specifies the number of times to execute the code
+inside the For Loop.
+
+== Event Structures
+
+An Event Structure waits until an event occurs, then executes the
+appropriate case to handle that event.
+
+image::cm_114.00_EventStructure.png[]
+
+
+. The Timeout terminals specifies the number of milliseconds to wait for
+an event before timing out.
+. The event selector label specifies which events cause the displayed
+case to execute.
+. The Event Data Node identifies the data LabVIEW returns when an event
+occurs

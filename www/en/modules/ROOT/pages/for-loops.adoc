@@ -1,0 +1,121 @@
+= Lesson 2 – For Loops
+:page-toclevels: 2
+
+CAUTION: {wip}
+
+NOTE: This lesson is optional.
+
+== Optional: Setting up the Hardware 
+
+.Setting up the Pico Hardware
+[%collapsible]
+====
+Wire your Pico Hardware to match the images below
+
+image::pw_001.00_DigitalOutputsWiring.jpg[]
+
+image::pw_002.00_DigitalOutputsWiring.jpg[]
+
+====
+
+.Setting up the Raxda Hardware
+[%collapsible]
+====
+Wire your Radxa Hardware to match the images below
+
+image::rw_001.00_Power.png[]
+
+image::rw_002.00_DigitalOutputsWiring.png[]
+
+image::rw_003.00_DigitalOutputsWiring.png[]
+
+====
+
+
+== Lesson Instructions
+A For Loop executes a sub-diagram a set number of times. In this case
+you will learn how to build a program that will blink the previous LED
+on and off 10 times each and then stop.
+
+* Make your workspace bigger to allow space for adding objects. Use Ctrl
+then drag to expand.
+
+image::cm_030.00_ClickAndDrag-toAddSpace.png[]
+
+* Alternatively select the objects you need to move with the selection
+tool and drag them where you want with the mouse, or using the arrows.
+
+image::cm_031.00_SelectMoveAndDragWithMouse.png[]
+
+TIP: Press Shift and an arrow key to move selected items quicker.
+
+* Now insert a For Loop, to do this Right-click anywhere on the block
+diagram to bring up the functions palette. Select `Structures` then `For
+Loop`.
+
+image::cm_032.00_RightClick-FunctionsPalette-Structures-ForLoop.png[]
+
+* You will only need to place the For Loop around the WriteDO SubVI (and
+the constants attached to it.)
+
+image::cm_033.00_PlaceForLoopArroundWriteDO.png[]
+
+* Once the For Loop has been placed, you will see an `N` in the top left
+corner, this is the loop count (or how many times the loop will
+execute.)
+
+* Right-click on the left hand side of the Loop Count, and select
+`Create a Constant`. For this task you will need the Loop Count to be 20
+(10 times on and 10 times off.)
+
+image::cm_034.00_RightClick-Create-Constant_TerminalN_ForLoop.png[]
+
+image::cm_035.00_ForLoopWired-20N.png[]
+
+In order for the program to `blink` successfully it will need to know
+what the previous loop has executed, therefore you will need a Shift
+Register.
+
+* Right-click on the edge of the For Loop and select `Add Shift
+Register.` Wire the True Constant to the Shift Registers and the DO
+(Value) wire terminal.
+
+
+image::cm_036.00_RightClick-AddShiftRegister-ForLoop.png[]
+
+image::cm_037.00_ForLoopWiredIncludingShiftRegister.png[]
+
+* Double click the green wire connecting the True Constant to the SubVI and delete it. Move the True Constant outside the For Loop. Wire the Constant through the For Loop and into the Shift Registers.
+
+image::cm_038.00_DoubleClick-GreenWire-Delete-DragTrueConstant.png[]
+
+image::cm_039.00_DragTrueConstantOutsideForLoop-WireToShiftRegister.png[]
+
+
+•	Remember to wire it back into the SubVI.
+
+image::cm_040.00_ForLoopWired-TrueFromShiftRegisterToWriteDO.png[]
+
+NOTE: If you were to run the program at this point the LED would light up, but would not `blink.`
+
+* For a blinking LED you will need to invert the boolean value after every loop. To do this Right-click anywhere to bring up the functions palette. Hover over `Boolean` then select the `Not` Boolean. Wire this into the shift registers.
+
+image::cm_041.00_RightClick-FunctionsPalette-Boolean-Not.png[]
+
+The program will now work! However, it will execute very fast, and you
+will not be able to see the LED blinking. So you need to slow the Loop
+down.
+
+* Right-click inside the For Loop, hover over `Timing.` There will see
+many different timing options. For this you will use the `Wait`
+function. Select and place inside the Loop.
+
+* Create a constant by Right-clicking on the left side of the `Wait`
+function. The `Wait` function executes in milliseconds, therefore to
+have the LED ON for 500ms and Off for 500ms, write 500.
+
+image::cm_042.00_RightClick-FunctionsPalette-Timing-Wait(ms).png[]
+image::cm_043.00_ForLoopWired-Not.png[]
+
+* Now Run the program. You have successfully used a For Loop to blink
+the Digital Output.
