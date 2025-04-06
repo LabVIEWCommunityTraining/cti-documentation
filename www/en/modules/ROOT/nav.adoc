@@ -1,3 +1,2 @@
 * xref:index.adoc[Set-up Instructions]
 * xref:course-manual.adoc[Course Manual]
-* xref:contributing.adoc[How to Contribute]
