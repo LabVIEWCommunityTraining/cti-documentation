@@ -74,7 +74,7 @@ image::cm_010.00_Ctrl+space_Ctrl+W.png[]
 If you press the Run arrow now you will notice that there are only 2
 issues listed, good job!
 
-* Press Ctrl-H to bring up the context help window. Hover over
+* Press kbd:[Ctrl-H] to bring up the context help window. Hover over
 Initialize.vi.
 
 image::cm_011.00_Ctrl-H_HandsOnPi20240_Initialize.png[]
