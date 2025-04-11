@@ -1,6 +1,6 @@
 = Set-up instructions
 
-See xref::ROOT:set-up.adoc[Set-up Instructions] to get {lv} environment.
+See xref::ROOT::set-up.adoc[Set-up Instructions] to get {lv} environment.
 
 * If you are using the Emulator, load it by navigating to
 /root/Desktop/GettingStartedLabVIEW1-English-main/3) LabVIEW Instrument
