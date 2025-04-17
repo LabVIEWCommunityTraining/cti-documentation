@@ -25,7 +25,12 @@ NOTE: There's no need to merge that ' vx.y` in the main branch. The build and pu
 TIP: You can add a `prerelease:` attribute to suffix the version name as long as the content is not ready for an official release. The version will be accessible on the website, but it will not be displayed as the default version to the visitor.
 
 == Rendering pages on your computer
-We recommend either one of these two options for people working more intensely in this repository
+We recommend either one of these three options for people working more intensely in this repository
+
+=== Use Visual Studio
+* Install the Asciidoc extension
+* On the settings, make sure to go under Asciidoc > Antora: Show Enable Antora Prompt, and check "Show a prompt to enable Antora support when an antora.yml file is detected"
+** For this prompt to work, you need to have a single antora.yml on your folder, so open at the language folder level you are working on
 
 === Use Intelli J to render locally
 * Clone the repository or Download a zip of the source files
