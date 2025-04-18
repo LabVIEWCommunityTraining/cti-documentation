@@ -33,7 +33,7 @@ We recommend either one of these three options for people working more intensely
 ** For this prompt to work, you need to have a single antora.yml on your folder, so open at the language folder level you are working on
 
 === Use Intelli J to render locally
-* Clone the repository or Download a zip of the source files
+* Clone the repository or download a zip of the source files
 * Install Community Edition for Intelli J https://www.jetbrains.com/idea/download/#community-edition (We can use it for this Open Source project)
 * When you open the CTI-Documentation folder, as soon as you open the first Asciidoc file, it will prompt you to install the Asciidoc plug in
 
@@ -41,7 +41,7 @@ We recommend either one of these three options for people working more intensely
 
 Execute the following steps:
 
-. Building the web site UI:
+. Building the website UI:
 * Open a terminal in the `user-interface` folder.
 * Execute the following command `npx gulp bundle`
 . Build the website.
@@ -52,7 +52,7 @@ Once built, the website is available in the `/antora/build/sites/en` folder.
 
 [IMPORTANT]
 ====
-To build the web site locally, make sure following the prerequisites listed below:
+To build the website locally, make sure to follow the prerequisites listed below:
 
 * https://docs.antora.org/antora/latest/install-and-run-quickstart/[Antora install]
 * https://docs.antora.org/antora-ui-default/prerequisites/[UI building prerequisites]
