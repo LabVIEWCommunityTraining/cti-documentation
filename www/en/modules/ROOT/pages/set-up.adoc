@@ -1,23 +1,181 @@
 = Set-up instructions
 
-See https://labviewcommunitytraining.github.io/www/en/set-up.html[Set-up Instructions] to get {lv} environment.
+IMPORTANT: See https://labviewcommunitytraining.github.io/www/en/set-up.html[Set-up Instructions] to get {lv} environment.
 
-* If you are using the Emulator, load it by navigating to
-/root/Desktop/GettingStartedLabVIEW1-English-main/3) LabVIEW Instrument
-Emulator/builds/HandsOn/CTIPicoVISAEmulator/
+== Install Course Materials
 
-* Right-click in the window and select Open Terminal Here
+image::in_018.00_AccessCommunityTrainingResources.png[]
 
+Open the start-up menu and click on menu:Other[Visit LabVIEW Community Training on GitHub]
+
+image::in_019.00_GitHubCTImaterial.png[]
+
+Select the course you wish to give.
+
+image::in_020.00_DownloadZIP.png[]
+
+Download as a zip file
+
+image::in_021.00_OpenDownloads.png[]
+
+Click on the file symbol
+
+image::in_022.00_Extract.png[]
+
+and extract to Desktop
+
+image::in_023.00_ExtractDestination.png[]
+
+You should now have a desktop that resembles this
+
+image::in_024.00_ExtractedMaterials.png[]
+
+== Installing Drivers
+
+
+Open up ../4) LabVIEW Instrument Drivers in a window
+
+Clicking on the Computer icon on the desktop and then on the File System, navigate to /usr/local/natinst/LabVIEW-2024-64/instr.lib
+
+Drag HandsOnPi2040 directory to ../instr.lib
+
+image::in_025.00_DragInstrumentDriverTOinstr.lib.png[]
+
+Open LabVIEW and create a new VI. Check the drivers are in the instr.lib as expected
+
+image::in_026.00_HandsOnInstrumentPalette.png[]
+
+
+== Making Emulator Exe run in Linux
+
+
+The file CTIPicoVISAEmulator.exe needs to be set to be executable
+Open the  GettingStartedLabVIEW1-English-main folder and navigate to 3) LabVIEW Instrument Emulator/builds/HandsOn
+and right-click on CTIPicoVISAEmulator folder and select "Open in Terminal"
+
+image::in_026.99_OpenInTerminal.png[]
+
+Then type ls kbd:[Enter]
+
+Then type ./CTIPicoVISAEmulator.exe kbd:[Enter]
+
+If you get a Permission denied, then type
+
+chmod u+x CTIPicoVISAEmulator.exe kbd:[Enter]
+
+Now you should be able to type ./CTIPicoVISAEmulator.exe kbd:[Enter]
+
+image::in_027.00_MarkEXE.png[]
+
+.Click here if you are getting other errors
+[%collapsible]
+====
+If you get other errors, then you need to build the Emulator executable for your VM.
+
+Navigate to Desktop/GettingStartedLabVIEW1-English-main/3) LabVIEW Instrument Emulator/Project and double-click on HandsOn.lvproj ot open it in LabVIEW
+
+Double-click Build Specifications
+
+Right-click on CTIPicoVISAEmulator and click on Build
+
+image::in_027.01_BuildSpecifications.png[]
+
+Once is done, click on the Explore button 
+
+image::in_027.02_Explore.png[]
+
+and you should be able to execute the exe
+
+image::in_027.03_EmulatorExecuting.png[]
+
+====
+
+
+== Setting Pico Firmware
+
+
+Each  Raspberry Pi Pico will need the course firmware installed on it.
+
+Hold the BOOTSEL button down on the Pico and plug the USB cable into the computer. The Pico will act as a flash drive.
+
+image::in_028.00_BOOTSEL.png[]
+
+In the Linux VM select Devices>>USB>>Raspberry Pi RP2 Boot [0100] (or similar)
+
+image::in_029.00_DevicesUSB.png[]
+
+This will mount the hard drive on the desktop
+
+image::in_030.00_DeviceAsUSBflashDrive.png[]
+
+Next drag and drop the course firmware file onto the Pico. This will install and the Pico LED will flash green 6 times.
+
+image::in_031.00_DragFirmware.png[]
+
+== Connect and Test the Pico
+
+
+In the Linux VM select Devices>>USB>>Raspberry Pi Pico [0100] (or similar)
+
+image::in_032.00_ConnectVMtoUSBdevice.png[]
+
+Connect the Pico
+
+
+== Hardware
+USA and UK Suppliers
+
+Raspberry Pi Pico:
+
+* https://thepihut.com/products/raspberry-pi-pico[Pi Hut]
+* https://www.digikey.com/en/products/detail/raspberry-pi/SC0917/16608257[Digikey]
+
+
+Pico Breadboard Kit:
+
+* https://thepihut.com/products/breadboard-kit-for-raspberry-pi-pico[Pi Hut]
+* https://www.pishop.us/product/pico-breadboard-kit[Pi Shop]
+* https://www.digikey.com/en/products/detail/sb-components-ltd/SKU20843/16836965[Digikey]
+
+
+Analog Test Board:
+
+* https://thepihut.com/products/analog-test-board[Pi Hut]
+* https://www.waveshare.com/analog-test-board.htm[Waveshare]
+
+China Suppliers
+
+Pico Breadboard Kit:
+
+* https://item.taobao.com/item.htm?id=777230738353&pisk=gN0trRYk3BCTbH3Ttf-hoYUj8jdnWHcwAAl5o-2GcvHK_ABmshlcHEMgKO2gmxVxvbkYII-aSDexdvesShycktHIi1q_fSsQd5PO1N_1lDCxavHY0Cy0h-HmGcAHrUcZ_rzjHLYkr37MeSHY1lw1OIN0w1O3fFdsobzXELYAx6ZwIrMGa3RvAXwUMS61lxZCd7wQ15NjhJZQNS__lxMbdwNba5sbc5_CdJPPCOZbCX6QG5_1fRMjOBF0itablxaB9S7B4KeC15QxVtViqJj8lZ_jJ5EBVfwBtq3Q6vy-1V3jk2LzX8G_pZ9y4Gzbd73B3O2qJXgs1g7or4nuGT28iGOp9iS4fW5v-1iIxSSZNWek6EIV0oVU98ApFisfKWPLECpl0ir0T&spm=a312a.7700824.w4002-22466606371.11.12a259a9THMYw0[Taobao]
+
+Raspberry Pi Pico:
+
+* https://item.taobao.com/item.htm?_u=j2prh5pla744&id=637653493419&pisk=gv___D2PutQEej8xGhVeOeLG5BLfCWzzkjOAZs3ZMFL9cqCNFIu20lAjlp18sdr0jtsCH9xwBK-2lI6yK1u4s1PblsCJBESwQIBFh9mNQZJVLr1lFhuNMZlGxT5-7NrMuqTMoEezUzzrs1YDkl4SkXMgJCR8umK9DFYKUdGa2zzPs6Gw675LzNryCadZDqBvXH3pipdtkqdYOHdXZE39DVnKppvpkVptkedp_CdtWKBxvpdJac39Hcpp9IR6kKBvkW1pKITvHwEmNIZ6M1NOK9yXzvmftpgxkwOLCLC_oqOF-Cs9F1Qsr4VD1h9R6pwyNxA9cOt18PMk1MCWegJSzLOtEmGBqqOBUWNImmm8q1U4SgEs1hdH1HPQOviDXBABtZPIfmx9tCO_OWMIm&spm=a1z09.2.0.0.6a382e8dVcWth6[Taobao]
+
+
+[NOTE]
+--
+For Lesson 5, you’ll be testing the Pico board’s analog inputs. The course manual references a blue board with two potentiometers, but this specific board is not included with the hardware provided. Instead, you’ll only need a single potentiometer for this lesson. Please ensure you have one available before proceeding.
+--
+
+== Using the emulator
+
+If you are using the Emulator,
+
+. load it by navigating to /root/Desktop/GettingStartedLabVIEW1-English-main/3) LabVIEW Instrument Emulator/builds/HandsOn/CTIPicoVISAEmulator/
+
+. Right-click in the window and select Open Terminal Here
++
 image::cm_001.00_Loading-CTIPicoVISAEmulator.png[]
 
-* Type in./CTIPicoVISAEmulator.exe
-
+. Type in./CTIPicoVISAEmulator.exe
++
 image::cm_002.00_TypeCTIPicoVISAEmulator.exe-inCMD.png[]
 
-* The emulator will ask you to select a subnet.
-
+. The emulator will ask you to select a subnet.
++
 image::cm_003.00_SelectThisSubnet.png[]
 image::cm_004.00_HandsOnEmulatorFirstView.png[]
-
-* It will then sit waiting for a connection. “Connecting” will be
+. It will then sit waiting for a connection. “Connecting” will be
 displayed in status bar.
