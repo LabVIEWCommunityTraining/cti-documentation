@@ -6,4 +6,6 @@ To write the overview of the course here.
 
 == Download
 
-{site-url}/{page-component-name}/{page-component-version}/{page-component-name}.pdf[PDF version of the course]
+* https://labviewcommunitytraining.github.io/cti-documentation/course-material.zip[Course material zip]
+
+* {site-url}/{page-component-name}/{page-component-version}/{page-component-name}.pdf[PDF version of the course]
