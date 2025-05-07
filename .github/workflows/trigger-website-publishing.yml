@@ -24,3 +24,30 @@ jobs:
           -H "X-GitHub-Api-Version: 2022-11-28" \
           https://api.github.com/repos/$repo_owner/$repo_name/actions/workflows/$workflow_file/dispatches \
           -d "$json_data"
+
+  publish_zip:
+      runs-on: ubuntu-latest
+      needs: []  # Run in parallel
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+
+        - name: Zip course-material
+          run: |
+            cd course-material
+            zip -r ../course-material.zip . 
+            cd ..
+
+        - name: Upload to GitHub Pages branch
+          run: |
+            mkdir gh-pages
+            mv course-material.zip gh-pages/
+            cd gh-pages
+            git init
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add .
+            git commit -m "Publish course-material.zip"
+            git branch -M gh-pages
+            git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            git push -f origin gh-pages
