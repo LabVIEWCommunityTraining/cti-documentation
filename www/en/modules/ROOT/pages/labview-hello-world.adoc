@@ -51,7 +51,7 @@ Driver Palette.
 
 image::cm_007.00_NavigateToHandsOnPi2040DriverPalette.png[]
 
-Drag and drop Initialize.vi, WriteDO.vi and Close.vi onto the block diagram
+Drag and drop *Initialize.vi*, *WriteDO.vi* and *Close.vi* onto the block diagram
 as shown below.
 
 image::cm_008.00_DrangAndDrop-Initialize-WriteDO-Close.png[]
@@ -83,7 +83,7 @@ NOTE: The VISA resource name is *bold*. This means that it needs to have an inpu
 
 We will need to create a Constant for the VISA Reference Terminal.
 
-* Right-click the `VISA Resource Name` input node on *Initialize.vi* 
+* Right-click the `VISA Resource Name` input node, the top left corner, on *Initialize.vi* 
 (as named by the poup tip strip) and hover over `Create` and select `Constant`.
 
 image::cm_017.00_RightClick-Create-Constant_Initialize.png[]
@@ -99,7 +99,7 @@ issue left.
 image::cm_012.00_Ctrl-H_HandsOnPi20240_WriteDO.png[]
 
 This VI needs its Output and DO Value (True) wiring. So let's create
-constants for them. Use the arrow on the right to select an output.
+constants for them. Use the arrow on the right to select an output. Select 'DO2 (BPIO3)'.
 
 image::cm_013.00_ArrowPointingToConstantDropDown-WriteDO.png[]
 image::cm_014.00_WriteDO_DO1(GPIO2).png[]
@@ -114,9 +114,9 @@ image::cm_016.00_WriteDO_TrueConstant_Labeled.png[]
 
 * Finally let's wire in a couple of outputs.
 
-* Right-click on IDN for *Initialize.vi* and select `Create Indicator`.
-Then we need an error out, so Right-click at the bottom right corner of the *Close.vi* and
-select `Create Indicator`.
+* Right-click on the 'Identity' output node for *Initialize.vi* hover over `Create' and select 'Indicator`.
+Then we need an error out indicator, so Right-click on the 'error out' node, the bottom right corner, of the *Close.vi* and
+hover over `Create' and select 'Indicator`.
 
 image::cm_019.00_RightClick-Create-Indicator_Initialize.png[]
 image::cm_022.00_Initialize-IdentityOutputIndicatorWired.png[]
