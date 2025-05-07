@@ -60,4 +60,4 @@ To build the website locally, make sure to follow the prerequisites listed below
 ====
 == Contribute to the documentation
 
-Please follow the instructions available https://labviewcommunitytraining.github.io/cti-documentation/en/cti-doc/contributing.html#contributing-to-the-documentation[here] to contribute to the documentation.
+Please follow the instructions available https://labviewcommunitytraining.github.io/www/en/contributing.html[here] to contribute to the documentation.
