@@ -81,8 +81,17 @@ image::cm_011.00_Ctrl-H_HandsOnPi20240_Initialize.png[]
 
 NOTE: The VISA resource name is *bold*. This means that it needs to have an input.
 
-* Now, right-click on VISA Resource Name Initialize.vi and select create
-constant.
+We will need to create a Constant for the VISA Reference Terminal.
+
+* Right-click the `VISA Resource Name` input node on *Initialize.vi* 
+(as named by the poup tip strip) and hover over `Create` and select `Constant`.
+
+image::cm_017.00_RightClick-Create-Constant_Initialize.png[]
+image::cm_018.00_Initialize-IOconstantWired.png[]
+
+Constants are terminals on the block diagram that supply fixed data
+values to the diagram. We`ll discuss data types etc. later in the
+session.
 
 If you press the Run arrow now you will notice that there is only 1
 issue left.
@@ -103,19 +112,10 @@ down window, hover over `Visible Items` and select `Label`.
 image::cm_015.00_RightClick-VisibleItems-Label.png[]
 image::cm_016.00_WriteDO_TrueConstant_Labeled.png[]
 
-We will also need to create a Constant for the VISA Reference Terminal. Like before, Right-click the `VISA Resource Name` tip strip and create a Constant
-
-image::cm_017.00_RightClick-Create-Constant_Initialize.png[]
-image::cm_018.00_Initialize-IOconstantWired.png[]
-
-Constants are terminals on the block diagram that supply fixed data
-values to the diagram. We`ll discuss data types etc. later in the
-session.
-
 * Finally let's wire in a couple of outputs.
 
-* Right-click on IDN for Initialize.vi and select `Create Indicator`.
-Then we need an error out, so Right-click at the bottom the Close.vi and
+* Right-click on IDN for *Initialize.vi* and select `Create Indicator`.
+Then we need an error out, so Right-click at the bottom right corner of the *Close.vi* and
 select `Create Indicator`.
 
 image::cm_019.00_RightClick-Create-Indicator_Initialize.png[]
