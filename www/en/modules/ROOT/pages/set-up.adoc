@@ -6,7 +6,7 @@ NOTE: If you don't have access to a {lv} version, see https://labviewcommunitytr
 
 == Download and install the course material
 
-Download the https://labviewcommunitytraining.github.io/labview-events-course/course-material.zip[course material zip] to start seting up the course
+Download the https://labviewcommunitytraining.github.io/cti-documentation/course-material.zip[course material zip] to start seting up the course
 
 image::in_021.00_OpenDownloads.png[]
 
