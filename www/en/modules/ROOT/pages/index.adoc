@@ -1,11 +1,48 @@
 = Overview
 
-CAUTION: {wip}
+// This content will only appear in the site.
+ifndef::loader-assembler[]
+.PDF version of the course
+[NOTE]
+====
+*You need to access this content offline?* You can downlod the PDF version of the course {site-url}/{page-component-name}/{page-component-version}/_exports/{page-component-name}-{page-component-version}.pdf[here]
+====
+endif::[]
 
-To write the overview of the course here.
+== 🎯 Course Objective
 
-== Download
+NOTE: {wip}
 
-* https://labviewcommunitytraining.github.io/cti-documentation/course-material.zip[Course material zip]
+== 👥 Target Audience
 
-* {site-url}/{page-component-name}/{page-component-version}/{page-component-name}.pdf[PDF version of the course]
+NOTE: {wip}
+
+== 🗂️ Course Outline
+
+=== Lesson 1
+
+NOTE: {wip}
+
+=== Lesson 2
+
+NOTE: {wip}
+
+=== Lesson 3
+
+NOTE: {wip}
+
+=== Lesson 4
+
+NOTE: {wip}
+
+=== Lesson 5
+
+NOTE: {wip}
+
+=== General Concepts
+
+NOTE: {wip}
+
+== ✅ Learning Outcomes
+
+NOTE: {wip}

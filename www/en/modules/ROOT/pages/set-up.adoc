@@ -1,20 +1,12 @@
 = Set-up instructions
 
-IMPORTANT: See https://labviewcommunitytraining.github.io/www/en/set-up.html[Set-up Instructions] to get {lv} environment.
+You need to have a {lv} 2024 version to open the material provided in this course.
 
-== Install Course Materials
+NOTE: If you don't have access to a {lv} version, see https://labviewcommunitytraining.github.io/www/en/set-up.html[Set-up {lv} Virtual Machine Instructions] to get a free {lv} environment running.
 
-image::in_018.00_AccessCommunityTrainingResources.png[]
+== Download and install the course material
 
-Open the start-up menu and click on menu:Other[Visit LabVIEW Community Training on GitHub]
-
-image::in_019.00_GitHubCTImaterial.png[]
-
-Select the course you wish to give.
-
-image::in_020.00_DownloadZIP.png[]
-
-Download as a zip file
+Download the https://labviewcommunitytraining.github.io/labview-events-course/course-material.zip[course material zip] to start seting up the course
 
 image::in_021.00_OpenDownloads.png[]
 
