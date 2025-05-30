@@ -1,5 +1,5 @@
-name: labview-course
-title: LabVIEW course
+name: course_introduction
+title: Introduction to LabVIEW
 version: v2.0
 nav:
   - modules/ROOT/nav.adoc
