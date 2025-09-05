@@ -114,9 +114,9 @@ image::cm_016.00_WriteDO_TrueConstant_Labeled.png[]
 
 * Finally let's wire in a couple of outputs.
 
-* Right-click on the 'Identity' output node for *Initialize.vi* hover over `Create' and select 'Indicator`.
-Then we need an error out indicator, so Right-click on the 'error out' node, the bottom right corner, of the *Close.vi* and
-hover over `Create' and select 'Indicator`.
+* Right-click on the `Identity` output node for *Initialize.vi* hover over `Create` and select `Indicator`.
+Then we need an error out indicator, so Right-click on the `error out` node, the bottom right corner, of the *Close.vi* and
+hover over `Create` and select `Indicator`.
 
 image::cm_019.00_RightClick-Create-Indicator_Initialize.png[]
 image::cm_022.00_Initialize-IdentityOutputIndicatorWired.png[]
